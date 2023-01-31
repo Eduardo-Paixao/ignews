@@ -16,7 +16,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       billing_address_collection: "required",
       line_items: [
         {
-          price: "",
+          price: "price_1MQC13EkpjI3df6Q30fwGe91",
           quantity: 1,
         },
       ],
