@@ -1,0 +1,26 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "deep"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "naturally",
+    "type": "Text"
+  },
+  "content": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Fugiat anim ipsum mollit ex incididunt quis elit laborum nulla eu eu aliquip fugiat consectetur."
+        }
+      }
+    ]
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": []
+  }
+}
