@@ -6,10 +6,11 @@ import Prismic from "@prismicio/client";
 import { getPrismicClient } from "../../services/prismic";
 
 import styles from "./styles.module.scss";
+import Link from "next/link";
 
 type IContent = {
   type?: string;
-  text?:string;
+  text?: string;
 };
 interface IPostData {
   title: string;
@@ -36,11 +37,11 @@ export default function posts({ posts }: PostsProps) {
       <main className={styles.container}>
         <div className={styles.posts}>
           {posts.map((post) => (
-            <a key={post.slug} href="#">
+            <Link href={`posts/${post.slug}`} key={post.slug}>
               <time>{post.updatedAt}</time>
               <strong>{post.title}</strong>
               <p>{post.excerpt}</p>
-            </a>
+            </Link>
           ))}
         </div>
       </main>
@@ -59,11 +60,9 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   );
 
-  console.log(JSON.stringify(response,null,2))
-
   const posts = response.results.map((post) => {
     return {
-      slug: post.id,
+      slug: post.uid,
       title: post.data.title,
       excerpt:
         post.data.content.find(
